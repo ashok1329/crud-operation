@@ -12,10 +12,8 @@
 |
 */
 
-/* Home page redirecting route */
-Route::get('/', function () {
-    return view('home');
-});
+/*Load list student list view*/
+Route::get('/', [MainController::class, 'loadStudent']);
 
 /* Student add page redirecting route */
 Route::get('/add', function () {
@@ -24,8 +22,6 @@ Route::get('/add', function () {
 
 /* Student adding in database */
 Route::post('/add-update', [MainController::class, 'addRecord']);
-/*Load list student list view*/
-Route::get('students', [MainController::class, 'loadStudent']);
 /*Delete student using id*/
 Route::post('destroy', [MainController::class, 'destroy'])->name('destroy');
 /*Load list student data*/

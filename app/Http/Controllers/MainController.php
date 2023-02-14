@@ -58,7 +58,7 @@ class MainController extends Controller
         $msg = $stu_id!="" ? 'update' : 'create';
 
         if($response) {
-            return redirect('/students')->with('msg', "You successfully $msg a student.");
+            return redirect('/')->with('msg', "You successfully $msg a student.");
         } else {
             return redirect('/add')->with('msg', "Something went wrong.");
         }

@@ -14,12 +14,17 @@
              border: 1px solid green;
              margin: 11px;
          }
+       .stu_listing {
+          float: right;
+          padding-bottom: 26px;
+       }
+       .stu_add {
+          float: right;
+          padding-top: 26px;
+       }  
     </style>
 </head>
 <body>
-   <button><a href="/">Home page</a></button>
-    <button> <a href="/add">Add page</a></button>
-    <button><a href="/students">List page</a></button>
  @if (session()->has('msg'))
     <div class="alert alert-success" id="success-alert">
      <button type="button" class="close" data-dismiss="alert">x</button>

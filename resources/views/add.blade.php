@@ -3,7 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <h2>@if(isset($user->id)) {{ 'Update' }} @else {{'Add'}} @endif form </h2>
+        <div class="stu_add">
+            <a href="/" title="Student list" class="btn btn-sm" style="color: #fff;background-color: #3DCB3A;border-color: #8ad3d3"> Students List </a>
+        </div>
+        <h2>@if(isset($user->id)) {{ 'Update' }} @else {{'Add'}} @endif student </h2>
         <form action="{{ url('add-update') }}" method="post" enctype="multipart/form-data" id="add-student-form">    
           @csrf
           <div class="form-group">
@@ -37,9 +40,7 @@
           </div>
           <div class="stu_profile">
           @if(@$user->image)
-            <img src="{{ ('/profile-image/'.@$user->image) }}" height="150"/>
-          @else
-          <img src="/profile-image/no-Image.png" height="150"/>
+            <img src="{{ ('/profile-image/'.@$user->image) }}" height="150" width="150" />
          @endif
           </div>
           <button id="add-student" type="button" class="btn btn-success">{{@$user->id ? 'Update' : 'Add' }}</button>

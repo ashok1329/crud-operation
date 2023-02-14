@@ -2,7 +2,10 @@
 @section('title', 'List Page')
 @section('content')
 <div class="container mt-5">
-    <h2 class="mb-4">Students Listing</h2>
+    <h2 class="mb-4">Students</h2>
+    <div class="stu_listing">
+        <a href="/add" title="Student list" class="btn btn-sm" style="color: #fff;background-color: #3DCB3A;border-color: #8ad3d3"> Add Student </a>
+    </div>
     <table class="table table-bordered yajra-datatable">
         <thead>
             <tr>
@@ -39,7 +42,7 @@
             {data: 'image', name: 'image',
             render: function( data, type, full, meta ) {
                 if(data) {
-                    $img = "<img src=\"/profile-image/" + data + "\" height=\"150\"                 alt='No Image'/>";
+                    $img = "<img src=\"/profile-image/" + data + "\" height=\"150\" width=\"150\" alt='No Image'/>";
                 } else {
                     $img = "<img src='/profile-image/no-Image.png' height=\"150\"                 alt='No Image'/>";
                 }
