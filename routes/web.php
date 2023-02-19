@@ -12,21 +12,43 @@
 |
 */
 
-/*Load list student list view*/
+/**
+* @method: GET
+* @params:  
+* @returns: 
+* @since: 18/02/2023
+* Comment: Loading student view
+*/
 Route::get('/', [MainController::class, 'loadStudent']);
 
-/* Student add page redirecting route */
+/**
+* @method: GET
+* @params:  
+* @returns: 
+* @since: 18/02/2023
+* Comment: Loading add student view
+*/
 Route::get('/add', function () {
     return view('add');
 });
 
-/* Student adding in database */
+/* 
+* Student adding in database 
+*/
 Route::post('/add-update', [MainController::class, 'addRecord']);
-/*Delete student using id*/
+/*
+* Delete student using id
+*/
 Route::post('destroy', [MainController::class, 'destroy'])->name('destroy');
-/*Load list student data*/
+/*
+* Load list student data
+*/
 Route::get('students/list', [MainController::class, 'studentsList'])->name('students.list');
-/*Edit student data using id*/
+/*
+* Edit student data using id
+*/
 Route::get('/edit/{id}',[MainController::class, 'edit'])->name('edit');
-/* Students deleting from database */
+/*
+* Students deleting from database
+*/
 Route::get('/delete-student/{id}',[MainController::class, 'deleteStudent']);
